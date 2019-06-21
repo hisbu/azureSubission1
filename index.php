@@ -13,18 +13,42 @@
  	table { margin-top: 0.75em; }
  	th { font-size: 1.2em; text-align: left; border: none; padding-left: 0; }
  	td { padding: 0.25em 2em 0.25em 0em; border: 0 none; }
+  /* table, tr, td{border: 1px solid black;} */
  </style>
  </head>
  <body>
+   <center>
  <h1>Register here!</h1>
  <p>Fill in your name and email address, then click <strong>Submit</strong> to register.</p>
+ <fieldset style="width:300px;">
+
+
  <form method="post" action="index.php" enctype="multipart/form-data" >
-       Name  <input type="text" name="name" id="name"/></br></br>
-       Email <input type="text" name="email" id="email"/></br></br>
-       Job <input type="text" name="job" id="job"/></br></br>
-       <input type="submit" name="submit" value="Submit" />
-       <input type="submit" name="load_data" value="Load Data" />
+   <table>
+     <tr>
+       <td>Name</td>
+        <td><input type="text" name="name" id="name"/></td>
+     </tr>
+     <tr>
+       <td>Email</td>
+        <td><input type="text" name="email" id="email"/></td>
+     </tr>
+     <tr>
+       <td>Job</td>
+        <td><input type="text" name="job" id="job"/></td>
+     </tr>
+     <tr>
+       <td colspan="2" align="right">
+         <input type="submit" name="submit" value="Submit" />
+
+       </td>
+     </tr>
+   </table>
+
+
  </form>
+ </fieldset>
+ <input type="submit" name="load_data" value="Load Data" />
  <?php
     $host = "dbsubmission1srv.database.windows.net";
     $user = "hisbu";
@@ -57,7 +81,7 @@
             echo "Failed: " . $e;
         }
 
-        echo "<h3>Your're registered!</h3>";
+        echo "<h3 style="color:green;">Your're registered!</h3>";
     } else if (isset($_POST['load_data'])) {
         try {
             $sql_select = "SELECT * FROM Registration";
@@ -85,5 +109,6 @@
         }
     }
  ?>
+</center>
  </body>
  </html>
