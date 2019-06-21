@@ -40,7 +40,7 @@
      <tr>
        <td colspan="2" align="right">
          <input type="submit" name="submit" value="Submit" />
-
+         <input type="submit" name="load_data" value="Load Data" />
        </td>
      </tr>
    </table>
@@ -48,7 +48,7 @@
 
  </form>
  </fieldset>
- <input type="submit" name="load_data" value="Load Data" />
+
  <?php
     $host = "dbsubmission1srv.database.windows.net";
     $user = "hisbu";
